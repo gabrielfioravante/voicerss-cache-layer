@@ -30,5 +30,4 @@ curl -X 'GET' \
   'http://localhost:8080/api/v1/tts?src=hello&hl=en-us' \
   -H 'accept: text/plain'
 ```
-
-The query parameters are the same as [VoiceRSS](https://www.voicerss.org/api/). Except for `key`, which you've set inside the `.env` file.
+The query parameters are the same as [VoiceRSS](https://www.voicerss.org/api/). Except for `key`, which you've set inside the `.env` file, and `b64`. You won't be using these two.
