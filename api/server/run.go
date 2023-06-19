@@ -12,7 +12,7 @@ func Run() {
 	gin.SetMode(config.Api.ServerMode)
 
 	r := gin.Default()
-    r.Use(cors.Default())
+	r.Use(cors.Default())
 
 	apiV1 := r.Group("/api/v1")
 	{
