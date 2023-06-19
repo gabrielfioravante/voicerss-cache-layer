@@ -1,0 +1,70 @@
+openapi: 3.0.0
+info:
+  description: "A caching layer for the [VoiceRSS](https://www.voicerss.org/) API. It caches the results from unique requests to avoid consuming the API's daily usage limit when making a request that was made before."
+  version: 1.0.0
+  title: VoiceRSS Cache Layer
+
+paths:
+  /tts:
+    get:
+      tags:
+        - tts
+      summary: Request TTS
+      description: "Request TTS from Cache Layer"
+      responses:
+        "200":
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+        "400":
+          description: Bad Request
+        "500":
+          description: Internal Server Error
+      parameters:
+        - in: query
+          name: src
+          schema:
+            type: string
+          required: true
+          description: The textual content for converting to speech (length limited by 100KB).
+        - in: query
+          name: hl
+          schema:
+            type: string
+          required: true
+          description: 	The textual content language.
+        - in: query
+          name: v
+          schema:
+            type: string
+          required: false
+          description: 	The speech voice.
+        - in: query
+          name: r
+          schema:
+            type: string
+          required: false
+          description: 	The speech voice.
+        - in: query
+          name: c
+          schema:
+            type: string
+          required: false
+          description: 	The speech audio codec.
+        - in: query
+          name: f
+          schema:
+            type: string
+          required: false
+          description: 	The speech audio formats
+        - in: query
+          name: ssml
+          schema:
+            type: string
+          required: false
+          description: 	The SSML textual content format.
+servers:
+  - url: http://localhost:8080/api/v1
+    description: Local server
