@@ -22,7 +22,7 @@ go build . # to compile the app into an executable
 A `Dockerfile` is also available.
 
 ## Usage
-You can check the api spec inside de `docs` folder.
+You can check the api spec inside the `docs` folder.
 
 ### Example
 ```sh
