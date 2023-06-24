@@ -19,5 +19,5 @@ func Run() {
 		apiV1.GET("/tts", tts.Get)
 	}
 
-	r.Run()
+    r.Run(":" + config.Api.Port)
 }

@@ -7,6 +7,7 @@ import (
 type ApiConfig struct {
 	VoiceRssKey string
 	ServerMode  string
+    Port        string
 }
 
 var Api *ApiConfig
@@ -24,8 +25,15 @@ func Init() {
 		serverMode = "release"
 	}
 
+	port, exists := os.LookupEnv("PORT")
+
+	if !exists {
+		port = "8080"
+	}
+
 	Api = &ApiConfig{
 		VoiceRssKey: voiceRssKey,
 		ServerMode:  serverMode,
+        Port: port,
 	}
 }
