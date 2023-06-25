@@ -9,7 +9,8 @@ You will need a [VoiceRSS API Key](https://www.voicerss.org/).
 Create a `.env` in the app root directory. And then:
 ```env
 VOICERSS_API_KEY="YOUR KEY"
-SERVER_MODE="release" # options: debug, release
+GIN_MODE="release" # options: debug, release
+PORT="8080"
 ```
 
 ## Building and Running

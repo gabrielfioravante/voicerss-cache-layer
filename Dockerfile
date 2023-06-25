@@ -1,5 +1,9 @@
 FROM golang:1.20.5
 
+ENV VOICERSS_API_KEY=key
+ENV GIN_MODE=release
+ENV PORT=8080
+
 WORKDIR /app
 
 COPY go.mod go.sum ./

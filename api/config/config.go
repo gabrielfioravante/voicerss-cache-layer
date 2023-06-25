@@ -6,8 +6,7 @@ import (
 
 type ApiConfig struct {
 	VoiceRssKey string
-	ServerMode  string
-    Port        string
+	Port        string
 }
 
 var Api *ApiConfig
@@ -19,12 +18,6 @@ func Init() {
 		panic("VOICERSS_API_KEY is not set inside .env")
 	}
 
-	serverMode, exists := os.LookupEnv("SERVER_MODE")
-
-	if !exists {
-		serverMode = "release"
-	}
-
 	port, exists := os.LookupEnv("PORT")
 
 	if !exists {
@@ -33,7 +26,6 @@ func Init() {
 
 	Api = &ApiConfig{
 		VoiceRssKey: voiceRssKey,
-		ServerMode:  serverMode,
-        Port: port,
+		Port:        port,
 	}
 }

@@ -8,10 +8,10 @@ import (
 
 func TestInit(t *testing.T) {
     os.Setenv("VOICERSS_API_KEY", "test")
-    os.Setenv("SERVER_MODE", "test")
+    os.Setenv("PORT", "5000")
 
     Init()
     assert.NotNil(t, Api)
     assert.Equal(t, Api.VoiceRssKey, "test")
-    assert.Equal(t, Api.ServerMode, "test")
+    assert.Equal(t, Api.Port, "5000")
 }
