@@ -10,9 +10,7 @@ import (
 )
 
 func init() {
-	if err := godotenv.Load(); err != nil {
-		panic("No .env file found")
-	}
+    godotenv.Load()
 }
 
 func main() {

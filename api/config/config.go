@@ -15,7 +15,7 @@ func Init() {
 	voiceRssKey, exists := os.LookupEnv("VOICERSS_API_KEY")
 
 	if !exists {
-		panic("VOICERSS_API_KEY is not set inside .env")
+		panic("VOICERSS_API_KEY is not set")
 	}
 
 	port, exists := os.LookupEnv("PORT")
