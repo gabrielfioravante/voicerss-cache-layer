@@ -9,8 +9,6 @@ import (
 )
 
 func Run() {
-	gin.SetMode(config.Api.ServerMode)
-
 	r := gin.Default()
 	r.Use(cors.Default())
 
